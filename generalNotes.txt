@@ -1,0 +1,240 @@
+Lecture 1: Computer Fundamentals
+--------------------------------
+Input Devices:
+
+Keyboard
+Mouse
+Scanner
+Webcam
+Output Devices:
+
+Monitor
+Printer
+Speaker
+Processing Units:
+
+CPU (Central Processing Unit)
+Storage Devices:
+Primary:
+
+RAM (Random Access Memory)
+ROM (Read-Only Memory)
+Secondary:
+
+Floppy Disk
+Hard Disk
+USB Drive
+SD Card
+Tape
+CD/DVD
+Main Difference:
+
+A system can operate without secondary storage devices but cannot operate without primary storage devices.
+When a program is running, data is stored in RAM and is lost once the program ends unless saved to secondary storage.
+Example:
+
+If you start Notepad and write something, the data is stored in RAM.
+Once you save the data, it moves to secondary storage.
+If Notepad is closed without saving, the data in RAM will be lost.
+Units of Measurement in Storage:
+
+1 Byte = 8 Bits
+1024 Bytes = 1 Kilobyte (KB)
+1024 KB = 1 Megabyte (MB)
+1024 MB = 1 Gigabyte (GB)
+1024 GB = 1 Terabyte (TB)
+And so on...
+Software:
+
+Operating Systems: Windows, DOS, Unix, Linux, Macintosh
+Programming Languages: C, C++, Fortran, Pascal, Java, Python, NodeJS, PHP, Golang
+Spreadsheet Packages: Excel, Lotus 123
+Editors: Notepad, MS Word, Vim, Gedit, Edit
+Types of Editors:
+
+Plain Text Editors: Contains only the text written (e.g., Notepad, Vim, vi, Gedit).
+Rich Text Editors: Contains additional information like text formatting (e.g., MS Word).
+
+
+
+Lecture 2: C Programming Language
+---------------------------------
+To create a file, we will use a plain text editor like Notepad or Vim, depending on the OS.
+
+File Identity:
+
+Name
+Extension (CamelCase is used to separate name and extension with a dot '.')
+A program is a set of instructions. In the context of C programming language:
+
+A program is a set of functions.
+A function is a set of instructions.
+Every function should have a unique name in a file. A program that is supposed to be executed should have a function named main.
+
+Example:
+abcd.c -> lmnop(), pqe(), xyz(), main()
+
+main is called the entry point function.
+
+We will ask the OS to execute the program. It doesn't matter what is written in the program, the OS will always start execution from the main function.
+
+Functions are not called automatically; we have to call the functions explicitly.
+
+
+Lecture 3: First Program
+-----------------------
+Monitor - Standard output device.
+
+Task: Compute the sum of 10 and 20 and then print the sum on monitor.
+math: x = 10; y = 20; z = x + y where x, y, z are variables and =, + are operators.
+x = 10 is an expression.
+10, 20 are constants.
+
+How to write a function?
+
+main is an identifier.
+main() -> round brackets start and round brackets end.
+together they are called parentheses.
+main()
+{
+
+--- -> definition of function
+
+} -> end of function body.
+We have to put int before main and return 0 before the end of function "}"; this will be discussed in the upcoming lecture.
+
+Then the code will be like:
+int main()
+{
+---
+return 0;
+}
+
+Rules: All statements should be terminated by a semicolon (;).
+
+int and return are keywords.
+Keywords will always be written in lowercase.
+
+All variables used within the function should be declared at the start of the function.
+
+How to declare?
+To declare means to specify the type of data a variable is supposed to store.
+
+Data types:
+
+Integers: 10, 20, 30
+Fractional: 10.02, 20.02
+Characters: ABC
+int is a keyword used to declare a variable that is supposed to store an integer type value.
+
+Example (eg1.c):
+int main()
+{
+int x, y, z;
+x = 10;
+y = 20;
+z = x + y;
+}
+
+When the program is executed, the execution starts from the main function.
+
+int x, y, z; -> because of this line, memory will be allocated for x, y, z in RAM.
+x = 10; = is the assignment operator -> we are assigning the value 10 to the variable x. (10 value will be set in the RAM for variable x)
+z = x + y; -> assigns the result of the sum of values of x and y to z.
+return 0; means main ends, which means the program ends because we are using the main function here. If the function was anything other than main and return 0 was written, it means only the function ends, not the program.
+
+
+
+Lecture 4: Calling printf & Including stdio.h
+----------------------------------------------
+
+printf is a predefined function; call printf whenever something needs to be printed on the monitor.
+
+How to use:
+- printf("... text here ");
+- To print any value: printf("%d", z); %d -> format specifier, z is value
+
+What is a format specifier?
+- Print as per specified format.
+  - int: %d
+  - float: %f
+  - characters: %c
+
+Example code:
+```c
+int main() {
+    int x, y, z;
+    x = 10;
+    y = 10;
+    z = x + y;
+    printf("%d", z);
+    return 0;
+}
+```
+
+Some points about the above code:
+- Which language? English
+- Which programming language? C
+
+The operating system cannot execute eg1.c because the OS does not know English; it only knows machine language. So, we need something that knows both English as well as machine language. That is called a **Compiler**. Here, the compiler should know about C language, so it should be a "Compiler of C".
+
+For every language, there is a separate compiler.
+
+eg1 is the source code. We will give the source code to the compiler -> then it will check. If the code is correct, then it will produce -> Compiled Code. If incorrect, it will print an error message.
+
+**Source Code -> C Compiler -> if correct compile -> produce compiled code file**
+
+We will give that compiled code file to the OS to execute.
+
+The compiler knows nothing about the printf function.
+
+What does the compiler know?
+- Keywords
+- Operators
+- Reserved symbols
+
+The compiler does not know about the printf function, so we have to teach the compiler about the printf function.
+
+What do we need to teach the compiler?
+1. What is the syntax to place a call to the printf function? (True, we have to teach this to the compiler)
+2. How does printf work? (Not needed in this case)
+
+**Header File contains the prototype of functions**
+
+To understand the method, we have to give the prototype of the function. Those who created C have made lots of functions like printf, scanf, cos, sin, strlen, strcpy, and so on. Then they categorized them:
+
+| Input/Output | Math | String |
+|--------------|------|--------|
+| printf       | cos  | strlen |
+| scanf        | sin  | strcpy |
+
+- stdio.h
+- math.h
+- string.h
+
+Only the prototype of printf is present in the stdio.h header file, not the entire definition. 
+**Note**: Stdio.h contains the prototype of functions related to standard input and output devices. The library file contains the definition of printf.
+
+As of now, the above code will not compile because this code knows nothing about printf. We have to use stdio.h.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int x, y, z;
+    x = 10;
+    y = 20;
+    z = x + y;
+    printf("%d", z);
+    return 0;
+}
+```
+
+# -> Hash ,  NOT hashtag
+< > -> Less than and greater than (not angular brackets)
+
+Whatever we write with # is called a preprocessor directive like #include, #define, #ifndef.
+
+Compilation will start line by line. When the compilation reaches `#include <stdio.h>`, it will open the header file and load all prototypes. Then it will go to `int main()`. Then it will go to the printf line and check the syntax. If all is good, it will continue; otherwise, it will show an error.
+
+Then the compiler will create an executable file.
