@@ -238,3 +238,216 @@ Whatever we write with # is called a preprocessor directive like #include, #defi
 Compilation will start line by line. When the compilation reaches `#include <stdio.h>`, it will open the header file and load all prototypes. Then it will go to `int main()`. Then it will go to the printf line and check the syntax. If all is good, it will continue; otherwise, it will show an error.
 
 Then the compiler will create an executable file.
+
+
+
+Lecture 5: How to Install in Windows
+-------------------------------------
+1. Visit winlibs.com
+2. Download the ucrt zip file (32/64 bit) based on your system version.
+3. To check your system version:
+   - Go to Control Panel -> System -> Check for 32/64 bit version.
+
+4. Download the zip file.
+5. Extract the zip file.
+6. Copy the extracted folder to the root of the C directory.
+7. Rename the folder to MinGW and move it to C drive.
+
+Directory Structure:
+- C:\MinGW\bin\gcc.exe (This is the C compiler)
+- C:\Windows\System32\notepad.exe
+
+Example Program Directory:
+- C:\ceg\eg1.c
+
+Steps to Open Command Line:
+1. Open Command Line.
+2. It will open at `C:\Users\username>`
+3. Navigate to root directory:
+   - `C:\Users\> cd ..`
+   - `C:\> md ceg` (Make directory)
+   - `C:\> cd ceg` (Change directory)
+   - `C:\ceg> notepad eg1.c`
+
+Commands:
+- `md` - Make directory
+- `cd` - Change directory
+
+Compiling Code:
+1. Navigate to your program directory:
+   - `C:\ceg> gcc eg1.c`
+2. If you get an error: 
+   - `gcc is not an internal or external command`
+
+Setting Path Environment Variable:
+1. If you execute `gcc eg1.c`, it will search in the current directory first.
+2. If not found, it will search the path in Windows environment.
+
+Setting Path for GCC:
+1. Open Windows Environment:
+   - Path: `C:\Windows; C:\Windows\System32;` (These are already set)
+2. Add at the end of the path:
+   - Path: `C:\Windows; C:\Windows\System32; C:\MinGW\bin;`
+
+Manual Path Setting (Temporary):
+1. Open Command Line.
+2. Navigate to your program directory:
+   - `C:\ceg> path=C:\Windows;C:\Windows\System32;C:\MinGW\bin;` (Set path)
+   - `C:\ceg> notepad eg1.c` (Write your program)
+   - Example program:
+    
+     int main() {
+         int x, y, z;
+         x = 10;
+         y = 20;
+         z = x + y;
+         return 0;
+     }
+    
+
+3. Compile the code:
+   - `C:\ceg> gcc eg1.c -o eg1.exe` (This will compile the code and create an executable file)
+
+Running the Executable:
+1. Execute the file:
+   - `C:\ceg> eg1` (This will execute the .exe file)
+
+Command Syntax:
+- `gcc sourceCodeFile -o outputFile`
+
+Setting Path Permanently:
+1. Go to Control Panel -> System -> Environment Variables.
+2. Under both User and System variables, search for Path.
+   - If found, edit and add the path at the end.
+   - If not found, create a new Path variable and set its value to `C:\MinGW\bin;`
+
+
+Practicals on Ububtu (Linux)
+-----------------------------
+
+in windows 
+download rufus Software
+download ubuntu ios file 
+install refus 
+
+how to make usb bootable: 
+open rufus 
+select device (if you want rename it)
+select boot file 
+start 
+write in IOS image mode. 
+wait .... upto process finish.
+
+restart then change boot 
+start F12 
+it will give boot option
+select USB. 
+
+then it will open ububto . 
+First time it will ask for install. make proper setup. and restart. 
+Change configuration as per need. 
+
+
+open Terminal 
+user@ububtu23:~ gcc 
+command gcc not found 
+user@ububtu23:~ sudo apt update. 
+user@ububtu23:~ sudo apt install build-essential
+yes
+
+user@ububtu23:~ gcc --version 
+-- gcc description 
+
+if we have multuple system then 
+user@ububtu23:~ sudo apt install xrdp
+yes
+then you can share via ip address to open this window on another local system. 
+
+user@ububtu23:~ ip addr show 
+we will get local ip address here 
+
+install vim 
+sudo apt install vim; 
+sudo apt install gedit 
+mkdir ceg
+cd ceg 
+vim abc.c 
+
+by default command mode (there are multiuple modes)
+cursor bilnking on the top we want to write something
+then firstt press i then it will open insert mode. 
+
+then type your program. 
+
+once progam done then we have to go back to command mode 
+press esc button 
+then collon :
+then w -> data saved 
+:w -> save data 
+:wq - save and quit 
+
+vim abc.c 
+gcc abc.c -o abc.out  (compile)
+./abc.out -> execute 
+
+in command mode 
+if you want to delete character then go to character and  press (x)
+if you want to delete 4 character then press (4 x)
+want to delete full line then dd; 
+2dd it will delete 2 lines 
+
+lower case 
+yy - it will copy line 
+shift p -> paste 
+
+uppar case v to start selection mode 
+then single time y it will copy data. 
+then shift p to paste. 
+
+still not comfortable with vim 
+use geidt. 
+gedit eg1.c it will open software like notepad. 
+
+
+---------
+5.3 : Practicals on Ububtu VM on Windows
+if we want to use windows 
+we can use virtual box 
+
+go to virtualbox.org 
+download virtualbox for windows host 
+download ubunto (legacy desktop install)
+
+open virual box run as administrator. 
+install. 
+
+open 
+click on New  
+give name -> virualUbuto1 (any name)
+select select ios file 
+next 
+set username 
+set password
+
+set memory 4096 (4gb)
+set processor 1gpu 
+create Virtual HDD 
+select HDD size (select as per your conveniance)
+next Finish 
+
+wait some time unless it will open 
+start setup. 
+select timezone
+set name, username, id, password
+
+ closed
+ open 
+ click on virtualUbubtu and start 
+ normal start 
+ install & setup 
+ restart 
+
+
+ user@ububtu23:~ sudo apt install build-essential
+ user@ububtu23:~ sudo apt install vim
+ user@ububtu23:~ sudo apt install gedit 
