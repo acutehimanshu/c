@@ -1,0 +1,88 @@
+How to print on screen?
+Int z = 10;
+printf(“%d”, z);
+
+If we want to print like
+Total is 10;
+printf(“Total is %d”. z);
+
+Program:
+
+#include<stdio.h>
+int main(){
+	int x,t,z;
+	x = 10;
+	t = 20;
+	z = x+t;
+	printf("Total is %d\n", z);
+	printf("Total of %d and %d is %d\n", x,t,z);
+	return 0;
+}
+
+We have to place variables in order we want to display, system will not change anything automaticlly. 
+
+–
+#include<stdio.h>
+int main(){
+	int x,t,z;
+	x = 10;
+	t = 20;
+	z = x+t;
+	printf("Value of X is %d",x);
+	printf("Value of T is %d",t);
+	printf("Total is  %d",z);
+	return 0;
+}
+Output
+Value of X is 10Value of T is 20Total is 30;
+
+Here we can see there is no line change
+What printf do.
+When you type value of x is %d_ then here cursor will stop. Whatever you will write will start from _ after the line.
+So to change the line we have to pas new line Character(\n) back slash n. 
+
+
+printf("Value of X is %d\n",x);
+printf("Value of T is %d\n",t);
+printf("Total is  %d\n",z);
+
+Output
+Value of x is 10
+Value of T is 20
+Total is 30
+
+Or we can do in same line with same output 
+printf("Value of X is %d\n Value of T is %d\n Total is  %d\n",x,t,z);
+
+
+How to Take Input?
+
+We write
+Int x; -> this means “RAM me x ke liye Memory allocate kar di jaegi.” 
+X = 20; -> x ki value 20 set kar di jaegi. 
+
+Value of x is 20
+Address of the x is 716
+
+When programmer use “x” then he will talking about value of x
+But when he use “&x” ampersand then he is talking about address of x
+printf(“%d”, x); // 20
+printf(“%d”, &x); // 716
+
+& - address operator. 
+
+We need function which can make system in waiting state to take input. 
+
+Scanf : scanf is a function that can be called to accept input from keyboard(Standard input Device). 
+We need to give 2 instruction to scanf
+What kind/Type of input is expected
+Where to keep it in ram?
+
+scanf(“%d”, &x); 
+   		   716
+
+It means whatever value you will pass to %d that will be placed whose address is 716 here. 
+
+Printf & scanf ka prototype stdio.h header file me he.
+
+
