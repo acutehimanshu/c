@@ -1,0 +1,15 @@
+Conditional Operators in c
+
+And (&&)
+
+true && true = true
+true && false  = false
+false && true  = false
+false && false = false 
+
+Or ( || )
+
+true || true = true
+true || false  = true
+false || true  = true
+false || false = false 
