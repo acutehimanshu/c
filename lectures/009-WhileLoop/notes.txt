@@ -1,0 +1,73 @@
+#include<stdio.h>
+Int main(){
+	Int x;
+X = 50;
+printf(“%d”, x);
+}
+
+What is happening here? 
+
+When you write line int x-> it means in the ram 4 Byte of memory is allocated. 
+4 byte means 8x4 (32 bits) 
+
+Now when you will write x = 50;  it means first that 50 will be converted into binary value 
+And then it will be assigned to x. 
+
+When you write printf(%d, x); here %d means printf will convert that x (binary value into Deciimal and print the value) 
+
+Bit can not be empty. 
+If you initialize any variable and do not assign any value to that variable and print it will print any random value that value is called Garbage Value. 
+For example 
+#include<sdio.h>
+Int main(){
+Int x;
+printf(“%d”, x);
+}
+
+Output: 22412 (any garbage value  , not fixed)
+
+—- 
+Lets take an example to print value from 1 to 5;
+Int main(){
+Int x;
+X = 1;
+printf(%d, x);
+X++;
+printf(%d, x);
+X++;
+printf(%d, x);
+X++;
+printf(%d, x);
+X++;
+printf(%d, x);
+Return 0;
+}
+
+Here problem is, too much repetitive code.
+To avoid that repetitive code we can use looping construct. 
+To implement loopint construct the keywords available are
+While, for, do-white.
+
+While:
+
+Syntex:
+While ( condition){
+—--
+}
+
+If condition evaluates to true then control goes in the loop.
+If false then control will by pass the loop. 
+When the loop end then control goes ON the while loop to evaluate next condition
+
+Int main(){
+Int x; // some area allocation to x in the RAM
+X = 1;   // in the ram value of x will be assigned as 1
+while(x>=5){
+printf(%d, x); // on the monitor it will print value of x like 1,2,3,4,5
+X++; 
+}
+Return 0; 
+}
+
+Output 
+12345
